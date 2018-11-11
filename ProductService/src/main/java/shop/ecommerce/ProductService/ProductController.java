@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import java.util.List;
 
 
 @RestController
@@ -23,8 +24,7 @@ public class ProductController {
 
     @GetMapping("/product")
     public List<Product> getProductDetail()  {
-        List<Product> getProductDetail = product.getProductDetail()
-        request.setAttribute("product", product);
+        List<Product> getProductDetail = productService.getProductDetail(product);
         return product;
     }
     
