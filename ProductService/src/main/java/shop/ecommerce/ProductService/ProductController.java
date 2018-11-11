@@ -31,4 +31,12 @@ public class ProductController {
     
     
 
+    @GetMapping("/product")
+    public List<Product> getProductDetail()  {
+        List<Product> getProductDetail = product.getProductDetail()
+        request.setAttribute("product", product);
+        return product;
+    }
+    
+
 }
