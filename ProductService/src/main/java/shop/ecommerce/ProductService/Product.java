@@ -8,14 +8,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.hibernate.boot.archive.scan.spi.Categorization;
-
 @Entity
 @Table(name="shops")
 public class Product {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int id;
+    private long id;
     private String sku;
     private String name;
     private Category category;
