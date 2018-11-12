@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="shops")
+@Table(name="products")
 public class Product {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
