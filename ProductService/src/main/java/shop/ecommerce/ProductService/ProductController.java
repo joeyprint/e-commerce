@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
@@ -32,10 +33,10 @@ public class ProductController {
     
     
 
-    @GetMapping("/product")
-    public List<Product> getProductDetail()  {
-        List<Product> getProductDetail = productService.getProductDetail(product);
-        return product;
+    @GetMapping("/product/{product_id}")
+    public ResponseEntity<Product> getProductDetail(@PathVariable("product_id") long productId)  {
+        Product getProductDetail = productService.getProductDetail(productId);
+        return new ResponseEntity<Product>(getProductDetail,HttpStatus.OK);
     }
     
 
