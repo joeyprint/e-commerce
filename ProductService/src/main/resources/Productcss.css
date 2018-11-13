@@ -67,18 +67,11 @@
 .buynow{
 	height: 100px;
 	background-color: #018ABE;
-	margin-top: -50px;	
+	margin-top: 10px;	
 	text-align: center;	
 }
-input[type=submit] {
-    	background-color: #018ABE;
-    	color: white;
-   	 	border: none;
-    	border-radius: 4px;
-    	font-size: 50px;
-    	
-    	
-    	
- }
-
+.buynow p {
+	font-size: 60px;
+	color: #FFFFFF;
+}
 
