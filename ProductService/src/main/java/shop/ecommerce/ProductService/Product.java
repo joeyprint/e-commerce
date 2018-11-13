@@ -17,16 +17,23 @@ public class Product implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
-//    @NotBlank
+
+    @NotBlank
     private String sku;
-//    @NotBlank
+
+    @NotBlank
     private String name;
-//    @NotBlank
+
+    @NotBlank
     private String category;
 
     @NotNull
     private double price;
+
+    @NotBlank
     private String detail;
+
+    @NotBlank
     private String thumbnail;
 
     public Product(String sku, String name, String category, double price, String detail, String thumbnail) {
