@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/defaultTemplate :: defaultHead (title='Productdetail')"></head>
+<head>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/Productcss.css}">
+</head>
+<body>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-12 col-md-6">
+				<nav>
+					<div class="row bg-primary nav">
+					  <div class="col-2">
+						  <a href="/" title="back to home page">
+							  <i class="fa fa-chevron-left back-icon"></i>
+						  </a>
+					  </div>
+					  <div class="col-10">
+						  <h3 class="text-white mt-2" th:text="${product.productname}"></h1>
+						  </div>
+					</div>
+				</nav>
+				<section id="content">
+					<div class="row">
+						<img th:src="${product.imageURL}" class="full-width">
+					</div>
+					<div class="row bg-white">
+						  <div class="col-8 text-primary text-title"><p th:text="${product.productname}"></p></div>
+						  <div class="col text-title"><p th:text="${'฿' + #numbers.formatDecimal(product.price, 0, 'COMMA', 2, 'POINT')}">฿450</p></div>
+					</div>
+					<div class="row bg-white mt-4">
+						<div class="col detail">
+							<p class="text-primary text-sub-title"> Detail</p>
+							<hr>
+							<div th:remove="tag" th:utext="${product.description}"></div>
+						</div>
+					</div>
+				</section>
+				<div class="btn-bottom d-flex justify-content-center">
+					<div class="col-12 col-md-6 p-0">
+						<a href="" class="bg-primary full-width full-height d-flex align-items-center justify-content-center">
+							<span class="text-title text-white">Buy Now</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+  	</div>
+
+</body>
+</html>
