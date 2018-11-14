@@ -1,4 +1,4 @@
-package shop.ecommerce.ProductService;
+package shop.ecommerce.AddressService;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ public class AddressController{
 
     @PostMapping("/address")
     public ResponseEntity<Address> addAddress(@Valid @RequestBody Address address) {
-        Address address = AddressService.addAddress(address);
+        Address address2 = AddressService.addAddress(address);
         return new ResponseEntity<Address>(address, HttpStatus.OK);
     }
 
