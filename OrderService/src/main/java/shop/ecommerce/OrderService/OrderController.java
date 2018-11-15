@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import shop.ecommerce.OrderService.OrderService;
+
 import javax.validation.Valid;
 import java.util.List;
 
@@ -21,5 +23,14 @@ public class OrderController {
         Order getOrder = orderService.getOrder(orderId);
         return new ResponseEntity<Order>(getOrder, HttpStatus.OK);
     }
+
+    @PostMapping("/order/create"){
+    public ResponseEntity<Order> createOrder(Order order){
+        Order createOrder = orderService.createOrder(order);
+        return new  ResponseEntity<Order>(createOrder, HttpStatus.OK);
+    }
+    
+
+    
 
 }
