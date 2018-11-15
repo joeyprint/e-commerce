@@ -34,8 +34,8 @@ public class UserController {
     }
 
     @PutMapping("/user/{id}/address")
-    public ResponseEntity<User> updateAddress(@PathVariable(name = "id") long userId) {
-        User user_object = UserService.updateAddress(userId, address);
+    public ResponseEntity<User> updateAddress(@PathVariable(name = "id") long userId, String address) {
+        User user_object = userService.updateAddress(userId, address);
         return new ResponseEntity<User>(user_object, HttpStatus.OK);
     }
 
