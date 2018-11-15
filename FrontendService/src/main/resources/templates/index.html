@@ -3,32 +3,23 @@
 <head th:include="fragments/defaultTemplate :: defaultHead (title='online shopping')">
 </head>
 <body>
+    <nav class="navbar bg-primary text-white fixed-top">
+        <span class="navbar-brand mx-auto h1">Products</span>
+    </nav>
     <div class="container">
-        <div class="form-group mt-4">
-            <input class="form-control" type="text" placeholder="Search">
-        </div>
-        <h2>Products</h2>
         <div class="row">
             <div th:each="product : ${products}" class="col-6">
                 <a href="#" class="product-link">
                     <div class="card">
                         <img class="card-img-top" th:src="${product.imageURL}" alt="Card image cap">
                         <div class="py-2">
-                            <p class="card-text mb-2" th:text="${product.productname}"></p>
-                            <strong class="card-text" th:text="${'฿' + #numbers.formatDecimal(product.price, 0, 'COMMA', 2, 'POINT')}"></strong>
+                            <h5 class="card-text mb-2 text-primary" th:text="${product.productname}"></h5>
+                            <span class="card-text" th:text="${'฿' + #numbers.formatDecimal(product.price, 0, 'COMMA', 2, 'POINT')}"></span>
                         </div>
                     </div>
                 </a>
             </div>
         </div>
-    </div>
-    <div class="navigation-bottom">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Category</a></li>
-            <li><a href="#">Cart</a></li>
-            <li><a href="#">Profile</a></li>
-        </ul>
     </div>
 </body>
 </html>
