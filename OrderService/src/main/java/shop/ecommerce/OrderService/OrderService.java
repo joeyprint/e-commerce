@@ -10,4 +10,9 @@ public class OrderService {
     public Order getOrder(long id) {
         return orderRepository.findById(id);
     }
+
+    public Order createOrder(Order order) {
+        return orderRepository.save(order);
+    }
+
 }
