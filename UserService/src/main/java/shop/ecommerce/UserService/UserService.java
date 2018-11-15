@@ -10,6 +10,10 @@ public class UserService {
     private UserRepository userRepository;
 
     public User viewUserDetail(long userId) {
-        return userRepository.findById(userId);
+        return userRepository.findbyId(userId);
+    }
+
+    public User updateAddress(User user) {
+        return userRepository.save(user);
     }
 }
