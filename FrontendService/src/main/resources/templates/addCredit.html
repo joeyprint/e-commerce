@@ -2,36 +2,48 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/defaultTemplate :: defaultHead (title='Addcredit')"></head>
 <head>
-	<link rel="stylesheet" type="text/css" th:href="@{/css/Productcss.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/Payment.css}">
 </head>
 <body>
-	<nav class="navbar bg-primary text-white fixed-top">
-		<div class="row full-width">
-			<div class="col-2">
-				<a href="/" title="back to home page">
-					<i class="fa fa-chevron-left back-icon"></i>
-				</a>
-			</div>
-			<div class="">
-				<span class="" th:text="${}"></span>					
-			</div>
-		</div>
-    </nav>
-        <div class="container">
-            <div class=""></div>
-            <div class=""></div>
-            <div class=""></div>
-            <div class=""></div>
-            <div class=""></div>
-            <div class="btn-bottom d-flex justify-content-center">
-					<div class="col-12 col-md-6 p-0">
-						<a href="" class="">
-							<span class="">Add Payment</span>
-						</a>
-					</div>
-				</div>
+        <nav class="navbar bg-primary text-white fixed-top">
+                
+                <div class="row full-width">
+                    <div class="col-2">
+                        <a href="/" title="back to home page">
+                            <i class="fa fa-chevron-left back-icon"></i>
+                        </a>
+                    </div>
+                    <div class="col-10">
+                        <span class="navbar-brand mx-auto h1" th:text="${payment}"></span>                  
+                    </div>
+                </div>
+            </nav>
+    <div class="container">
+        <label for="PaymentType">Payment Type</label>
+        <select id="type" name="type">
+                <option value="credit">Credit</option>
+              </select>
 
-        </div>
+        <label for="accName">Account Name</label>
+        <input type="text" id="accName" name="accountname" placeholder="ex.Lee Avatar">
+
+        <label for="cardNum">Card Number</label>
+        <input type="text" id="cardNum" name="cardnumber" placeholder="ex. 1 - 30258 - 2365">
+
+        <label for="ExpDate">Expire Date</label>
+        <input type="text" id="ExpDate" name="expiredate" placeholder="MM - YYY">
+
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" name="cvv" placeholder="ex.111">
+
+        <div class="btn-bottom d-flex justify-content-center">
+                <div class="col-12 col-md-6 p-0">
+                    <a href="" class="full-width full-height d-flex align-items-center justify-content-center">
+                        <span class="text-title text-white">Add Payment</span>
+                    </a>
+                </div>
+            </div>
+    </div>
 
 </body>
 </html>
