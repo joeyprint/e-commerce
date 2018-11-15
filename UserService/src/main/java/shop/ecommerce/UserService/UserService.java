@@ -5,14 +5,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
-    
-    
 
     @Autowired
     private UserRepository userRepository;
 
     public User viewUserDetail(long userId) {
-        return userRepository.findbyId(userId);
+        return userRepository.findById(userId);
     }
 
     public User updateAddress(User user) {
