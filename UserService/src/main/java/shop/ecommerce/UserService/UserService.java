@@ -16,12 +16,14 @@ public class UserService {
     public User updateAddress(long userId, String address) {
         User user = userRepository.findById(userId);
         user.setAddress(address);
+        return userRepository.save(user);
     }
 
     public User addAddress(User user) {
         return userRepository.save(user);
     }
-    public User getAddress(long userId){
+
+    public User getAddress(long userId) {
         return userRepository.findById(userId);
     }
 }
