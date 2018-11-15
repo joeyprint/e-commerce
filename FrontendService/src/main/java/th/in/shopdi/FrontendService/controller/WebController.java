@@ -20,6 +20,7 @@ public class WebController {
     List<Product> productList = new ArrayList<>();
     for (int i = 0; i < 10; i++) {
       Product product = new Product();
+      product.setId(1L);
       product.setProductname("Red Bag");
       product.setPrice(2000);
       product.setImageURL("https://i.pinimg.com/736x/47/8e/53/478e53e19348bff068863b3496550f95--purse-handles-purse-strap.jpg");
