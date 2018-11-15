@@ -4,7 +4,7 @@
 
 **configuration application properties**
 
-Set port : ``` port: number ```
+Set port : ``` server.port= {port_number} ```
 
 Set your database URL : ```spring.datasource.url={your_database_path} ```
 
