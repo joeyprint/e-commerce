@@ -7,7 +7,9 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public User updateAddress(User user) {
+    public User updateAddress(long userId, String address) {
+        User user = userRepository.findById(userId);
+        user.setAddress(address);
         return userRepository.save(user);
     }
 }
