@@ -5,6 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import th.in.shopdi.FrontendService.model.Product;
+import th.in.shopdi.FrontendService.model.User;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -23,7 +25,8 @@ public class WebController {
       product.setId(1L);
       product.setProductname("Red Bag");
       product.setPrice(2000);
-      product.setImageURL("https://i.pinimg.com/736x/47/8e/53/478e53e19348bff068863b3496550f95--purse-handles-purse-strap.jpg");
+      product.setImageURL(
+          "https://i.pinimg.com/736x/47/8e/53/478e53e19348bff068863b3496550f95--purse-handles-purse-strap.jpg");
       productList.add(product);
     }
     model.addAttribute("products", productList);
@@ -41,4 +44,14 @@ public class WebController {
     model.addAttribute("product", product);
     return "ProductDetail";
   }
+
+  @GetMapping("/ship")
+  public String getShippInfo(Model model) {
+    User user = new User();
+    user.setUserName("noname");
+    user.setAddress("nowhere");
+    model.addAttribute("user", user);
+    return "ShippingInfo";
+  }
+
 }
