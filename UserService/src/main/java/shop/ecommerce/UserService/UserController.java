@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -16,7 +17,7 @@ public class UserController {
 
     @GetMapping("/user/{id}")
     public ResponseEntity<User> viewUserDetail(@PathVariable(name = "id") long userId) {
-        User user_object = UserService.viewUserDetai(userId);
+        User user_object = userService.viewUserDetail(userId);
         return new ResponseEntity<User>(user_object, HttpStatus.OK);
     }
 
