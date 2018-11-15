@@ -15,7 +15,7 @@ public class UserController {
 
     @GetMapping("/user/{id}")
     public ResponseEntity<User> viewUserDetail(@PathVariable (name = "id") long userId){
-        User user_object = UserService.viewUserDetai(userId);
+        User user_object = userService.viewUserDetail(userId);
         return new ResponseEntity<User>(user_object, HttpStatus.OK);
     }
 
