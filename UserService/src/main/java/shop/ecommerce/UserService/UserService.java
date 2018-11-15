@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
+    
+    
 
     @Autowired
     private UserRepository userRepository;
@@ -14,6 +16,10 @@ public class UserService {
     }
 
     public User updateAddress(User user) {
+        return userRepository.save(user);
+    }
+    
+    public User addAddress(User user){
         return userRepository.save(user);
     }
 }
