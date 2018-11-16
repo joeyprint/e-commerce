@@ -13,18 +13,14 @@ public class UserService {
         return userRepository.findById(userId);
     }
 
-    public User getAddress(long userId) {
-        return userRepository.findById(userId);
+    public String getAddress(long userId) {
+        return userRepository.findAddressById(userId).getAddress();
     }
 
-    public User addAddress(User user) {
-        return userRepository.save(user);
-    }
-
-    public User updateAddress(long userId, String address) {
-        User user = userRepository.findById(userId);
-        user.setAddress(address);
-        return userRepository.save(user);
+    public User updateAddress(long userId, User user) {
+        User userObject = userRepository.findById(userId);
+        userObject.setAddress(user.getAddress());
+        return userRepository.save(userObject);
     }
 
     public User updateUserAccount(long userId, User user) {

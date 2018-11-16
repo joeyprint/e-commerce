@@ -19,16 +19,10 @@ public class UserController {
         return new ResponseEntity<User>(user_object, HttpStatus.OK);
     }
 
-    @GetMapping("/user/{id}")
-    public ResponseEntity<User> getAddress(@PathVariable(name = "id") long userId) {
-        User user_object = userService.getAddress(userId);
-        return new ResponseEntity<User>(user_object, HttpStatus.OK);
-    }
-
-    @PostMapping("/user/{id}/add")
-    public ResponseEntity<User> addAddress(@PathVariable(name = "id") User userId) {
-        User address = userService.addAddress(userId);
-        return new ResponseEntity<User>(address, HttpStatus.OK);
+    @GetMapping("/user/{id}/address")
+    public ResponseEntity<String> getAddress(@PathVariable(name = "id") long userId) {
+        String address = userService.getAddress(userId);
+        return new ResponseEntity<String>(address, HttpStatus.OK);
     }
 
     @PutMapping("/user/{id}")
@@ -38,8 +32,8 @@ public class UserController {
     }
 
     @PutMapping("/user/{id}/address")
-    public ResponseEntity<User> updateAddress(@PathVariable(name = "id") long userId, String address) {
-        User user_object = userService.updateAddress(userId, address);
+    public ResponseEntity<User> updateAddress(@PathVariable(name = "id") long userId, @Valid @RequestBody User user) {
+        User user_object = userService.updateAddress(userId, user);
         return new ResponseEntity<User>(user_object, HttpStatus.OK);
     }
 
