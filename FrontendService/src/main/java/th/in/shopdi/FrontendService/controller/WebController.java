@@ -54,4 +54,11 @@ public class WebController {
     return "ShippingInfo";
   }
 
+  @GetMapping("/shipping")
+  public String getShippInfo() {
+    return "ShippingInfo";
+  }
+
+  
+
 }
