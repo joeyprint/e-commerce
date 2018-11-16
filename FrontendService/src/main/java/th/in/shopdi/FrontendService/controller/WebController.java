@@ -59,6 +59,12 @@ public class WebController {
     return "ShippingInfo";
   }
 
+  @GetMapping("/payment")
+  public String getCreditPayment(){
+  return "addCredit";
+}
+
+
   
 
 }
