@@ -14,7 +14,7 @@ public class UserService {
     }
 
     public String getAddress(long userId) {
-        return userRepository.findAddressById(userId).getAddress();
+        return userRepository.findById(userId).getAddress();
     }
 
     public User updateAddress(long userId, User user) {
