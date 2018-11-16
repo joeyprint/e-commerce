@@ -4,8 +4,7 @@
 <head th:replace="fragments/defaultTemplate :: defaultHead (title='ShippingInfo')"></head>
 
 <head>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/Productcss.css}">
-
+    <link rel="stylesheet" type="text/css" th:href="@{/css/ShippingInfo.css}">
 </head>
 
 <body>
@@ -17,9 +16,7 @@
                 </a>
             </div>
             <div class="col-10">
-                <span class="navbar-brand mx-auto h1">
-
-                </span>
+                <span class="navbar-brand mx-auto h1 align-items-center justify-content-center">Shipping Info</span>
             </div>
         </div>
     </nav>
@@ -27,28 +24,62 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 bg-white spaceWhiteBox">
                 <section id="content">
-                    <div class="row">
-                        <span th:text="${user.userName}"></span>
-                        <span th:text="${user.address}"></span>
+                    <div class="row align-items-center justify-content-center">
+                        <div class="row col-md-12 align-items-center justify-content-center space-subtext">
+                            <div class="align-items-center justify-content-center subtext">
+                                <span>You didn't add your address</span>
+                            </div>
+                        </div>
+                        <div class="row align-items-center justify-content-center spacebtn-pri">
+                            <div class="d-flex justify-content-center">
+                                <div class="col-12 col-md-6 p-0">
+                                    <a href="" class="btn-pri bg-primary full-width full-height d-flex align-items-center justify-content-center">
+                                        <span class="text-title text-white">Add Address</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
 
                 </section>
-                <div class="btn-bottom d-flex justify-content-center">
-                    <div class="col-12 col-md-6 p-0">
-                        <a href="" class="bg-primary full-width full-height d-flex align-items-center justify-content-center">
-                            <span class="text-title text-white">Buy Now</span>
-                        </a>
+            </div>
+
+
+            <div class="col-12 col-md-6 bg-white">
+                <section id="content">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="row col-md-12 align-items-center justify-content-center space-subtext">
+                            <div class="align-items-center justify-content-center subtext">
+                                <span>You didn't add your payment</span>
+                            </div>
+                        </div>
+                        <div class="row align-items-center justify-content-center spacebtn-pri">
+                            <div class="d-flex justify-content-center">
+                                <div class="col-12 col-md-6 p-0">
+                                    <a href="" class="btn-pri bg-primary full-width full-height d-flex align-items-center justify-content-center">
+                                        <span class="text-title text-white">Add Payment</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                </section>
+            </div>
+
+            <div class="btn-bottom d-flex justify-content-center">
+                <div class="col-12 col-md-6 p-0">
+                    <a href="" class="bg-primary full-width full-height d-flex align-items-center justify-content-center">
+                        <span class="text-title text-white">Pay Now</span>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        // console.log("test")
-    </script>
+    </div>
+
 </body>
 
 </html>
