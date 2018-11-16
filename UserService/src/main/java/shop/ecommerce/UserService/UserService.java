@@ -27,4 +27,12 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    public User updateUserAccount(long userId, User user) {
+        User userObject = userRepository.findById(userId);
+        userObject.setName(user.getName());
+        userObject.setSurname(user.getSurname());
+        userObject.setEmail(user.getEmail());
+        userObject.setTelNo(user.getTelNo());
+        return userRepository.save(userObject);
+    }
 }
