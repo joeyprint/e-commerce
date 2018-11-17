@@ -68,4 +68,10 @@ public class WebController {
   return "addCredit";
 }
 
+@GetMapping("/vieworder")
+public String getViewOrder(){
+return "viewOrder";
+}
+
+
 }
