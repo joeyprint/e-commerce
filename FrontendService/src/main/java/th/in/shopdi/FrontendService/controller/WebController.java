@@ -63,5 +63,9 @@ public class WebController {
   public String getaddAddress() {
     return "addAddress";
   }
+  @GetMapping("/payment")
+  public String getCreditPayment(){
+  return "addCredit";
+}
 
 }
