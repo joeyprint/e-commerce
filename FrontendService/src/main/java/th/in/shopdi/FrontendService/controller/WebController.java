@@ -59,6 +59,9 @@ public class WebController {
     return "ShippingInfo";
   }
 
-  
+  @GetMapping("/addAddress")
+  public String getaddAddress() {
+    return "addAddress";
+  }
 
 }
