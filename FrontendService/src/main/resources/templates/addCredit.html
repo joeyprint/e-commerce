@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/defaultTemplate :: defaultHead (title='Addcredit')"></head>
 <head>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/Payment.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/Addcredit.css}">
 </head>
 <body>
         <nav class="navbar bg-primary text-white fixed-top">
@@ -14,16 +14,14 @@
                         </a>
                     </div>
                     <div class="col-10">
-                        <span class="navbar-brand mx-auto h1" th:text="${payment}"></span>                  
+                        <span class="navbar-brand mx-auto h1 align-items-center justify-content-center">Add Payment</span>            
                     </div>
                 </div>
             </nav>
     <div class="container">
         <label for="PaymentType">Payment Type</label>
-        <select id="type" name="type">
-                <option value="credit">Credit</option>
-              </select>
-
+        <input type="text" id="Type" name="credit">
+        
         <label for="accName">Account Name</label>
         <input type="text" id="accName" name="accountname" placeholder="ex.Lee Avatar">
 
