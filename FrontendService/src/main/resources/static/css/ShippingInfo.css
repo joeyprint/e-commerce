@@ -60,15 +60,6 @@ body {
     border-radius: 24.5px;
 }
 
-.bg-blank {
-    background-color: #E5E5E5;
-}
-
-.bg-white {
-    background-color: white;
-    width: auto;
-}
-
 .space-subtext {
     padding-top: 30px;
     padding-bottom: 10px;
