@@ -1,0 +1,54 @@
+:root {
+    --blue-primary: #018ABE;
+}
+
+.bgblue {
+    background-color: var(--blue-primary) !important;
+}
+
+.textblue {
+    color: var(--blue-primary) !important;
+}
+
+textarea {
+    width: 100%;
+    height: 233px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background-color: #ffffff;
+    resize: none;
+}
+
+input[type=text],
+select {
+    width: 100%;
+    height: 29px;
+    padding: 12px 20px;
+    margin-top: 0px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+label {
+    color: var(--primary) !important;
+    Font-Size: 14px;
+    Line-Height: 15px;
+    text-align: left;
+    margin-bottom: 3px;
+}
+
+.bg {
+    background-color: #ffffff;
+}
+
+.nomargin {
+    margin: 0%;
+}
+
+.spaceBox {
+    margin-bottom: 20px;
+}
