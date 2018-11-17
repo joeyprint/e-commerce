@@ -54,7 +54,7 @@ body {
 }
 
 .btn-pri {
-    width: 151 px;
+    width: 151px;
     height: 49px;
     text-align: center;
     border-radius: 24.5px;
@@ -70,13 +70,18 @@ body {
 }
 
 .space-subtext {
-    padding: 40px;
+    padding-top: 30px;
+    padding-bottom: 10px;
 }
 
 .spacebtn-pri {
-    padding-bottom: 20px;
+    margin: 15px;
 }
 
-.spaceWhiteBox {
-    margin-bottom: 5px;
+.space-white-box {
+    margin-bottom: 15px;
+}
+
+.text-button {
+    font-size: 14px;
 }
