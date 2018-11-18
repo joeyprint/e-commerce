@@ -1,4 +1,4 @@
-package main.java.shop.ecommerce.OrderService;
+package shop.ecommerce.OrderService;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ public class OrderController {
         return new ResponseEntity<Order>(getOrder, HttpStatus.OK);
     }
 
-    @PostMapping("/order/create"){
+    @PostMapping("/order/create") 
     public ResponseEntity<Order> createOrder(Order order){
         Order createOrder = orderService.createOrder(order);
         return new  ResponseEntity<Order>(createOrder, HttpStatus.OK);
