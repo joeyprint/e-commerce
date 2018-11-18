@@ -1,6 +1,7 @@
-package main.java.shop.ecommerce.OrderService;
+package shop.ecommerce.OrderService;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Locale.Category;
 
 import javax.persistence.Entity;
@@ -10,6 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+
+import shop.ecommerce.ProductAdapter.Product;
+import shop.ecommerce.UserAdapter.User;
 
 @Entity
 @Table(name = "orders")
