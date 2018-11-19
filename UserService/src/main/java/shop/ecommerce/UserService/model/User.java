@@ -1,6 +1,5 @@
-package shop.ecommerce.UserService;
+package shop.ecommerce.UserService.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -14,6 +13,7 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(unique = true)
     private String facebookId;
 
     @NotBlank
