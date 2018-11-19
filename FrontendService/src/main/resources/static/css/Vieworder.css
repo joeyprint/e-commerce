@@ -1,5 +1,4 @@
-input[type=text],
-select {
+input[type=text], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -19,7 +18,6 @@ select {
     border-radius: 4px;
     cursor: pointer;
 }
-
 .btn-bottom a {
     text-decoration: none;
 }
@@ -27,41 +25,32 @@ select {
 :root {
     --primary: #018ABE;
 }
-
 body {
     background: #ffffff;
 }
-
 .bg-primary {
     background-color: var(--primary) !important;
 }
-
-.text-primary {
-    color: var(--primary) !important;
+.text{
+    color: #000000;
 }
-
 .text-title {
-    font-size: 24px;
+    font-size: 20px;
 }
-
 .text-sub-title {
     font-size: 18px;
 }
-
 .nav {
     height: 50px;
 }
-
 .back-icon {
     font-size: 30px;
     color: #fff;
     padding: 10px;
 }
-
 .full-width {
     width: 100%;
 }
-
 .full-height {
     height: 100%;
 }

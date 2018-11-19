@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/defaultTemplate :: defaultHead (title='Vieworder')"></head>
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/Vieworder.css}">
+</head>
+<body>
+    <nav class="navbar bg-primary text-white fixed-top">
+        <div class="row full-width">
+            <div class="col-2">
+                <a href="/" title="back to home page">
+                    <i class="fa fa-chevron-left back-icon"></i>
+                </a>
+            </div>
+            <div class="col-10">
+                <span class="navbar-brand mx-auto h1 align-items-center justify-content-center">View Order</span>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+            <div class="row justify-content-center">
+                    <div class="col-12 col-md-6 bg-white spaceWhiteBox">
+                            <div class="row">
+                                    
+                                </div>
+                                <div class="row bg-white">
+                                        <div class="col-8 text text-title"><p>Evalina</p></div>
+                                        <div class="col text-title"><p>฿450</p></div>
+                                  </div>
+                        
+
+
+                            <div class="btn-bottom d-flex justify-content-center">
+                                    <div class="col-12 col-md-6 p-0">
+                                        <a href="" class="full-width full-height d-flex align-items-center justify-content-center">
+                                            <span class="text-title text-white">Pay Now</span>
+                                        </a>
+                                    </div>
+                             </div>
+                    </div>
+            </div>
+    </div>
+
+</body>
+</html>

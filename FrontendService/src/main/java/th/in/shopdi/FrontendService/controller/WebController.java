@@ -62,9 +62,18 @@ public class WebController {
     return "ShippingInfo";
   }
 
+  @GetMapping("/addAddress")
+  public String getaddAddress() {
+    return "addAddress";
+  }
   @GetMapping("/payment")
   public String getCreditPayment(){
   return "addCredit";
 }
+
+  @GetMapping("/vieworder")
+  public String getViewOrder(){
+    return "viewOrder";
+  }
 
 }

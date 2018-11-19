@@ -1,16 +1,13 @@
-package main.java.shop.ecommerce.OrderService;
+package shop.ecommerce.OrderService;
 
-import java.util.List;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import shop.ecommerce.OrderService.OrderService;
 
-import javax.validation.Valid;
-import java.util.List;
 
 @RestController
 public class OrderController {
@@ -24,9 +21,9 @@ public class OrderController {
         return new ResponseEntity<Order>(getOrder, HttpStatus.OK);
     }
 
-    @PostMapping("/order/create"){
-    public ResponseEntity<Order> createOrder(Order order){
-        Order createOrder = orderService.createOrder(order);
+    @PostMapping("/user/{user_id}/product/{product_id}/order/create") 
+    public ResponseEntity<Order> createOrder(@PathVariable("user_id") long userId, @PathVariable("product_id") long productId, @Valid @RequestBody Order order){
+        Order createOrder = orderService.createOrder(userId, productId,order);
         return new  ResponseEntity<Order>(createOrder, HttpStatus.OK);
     }
     

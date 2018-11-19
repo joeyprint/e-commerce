@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/defaultTemplate :: defaultHead (title='ShippingInfo')"></head>
+
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/form.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/ShippingInfo.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/global.css}">
+
+
+</head>
+
+<body class="bg">
+    <nav class="navbar bgblue text-white fixed-top">
+        <div class="row full-width">
+            <div class="col-2">
+                <a href="/" title="back to home page">
+                    <i class="fa fa-chevron-left back-icon"></i>
+                </a>
+            </div>
+            <div class="col-10 align-items-center">
+                <span class="navbar-brand mx-auto h1 align-items-center justify-content-center">Add Address</span>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+
+        <div class="row d-flex justify-content-center">
+
+            <div class="col-12 col-md-6 p-0">
+                <form>
+                    <div class="col-12 row nomargin spaceBox ">
+                        <label>Name</label>
+                        <input class="full-height full-width " type="text " id="fname " name="firstname ">
+                    </div>
+                    <div class="col-12 row nomargin ">
+                        <label>Address</label>
+                        <textarea class="col-12 full-height full-width " name="address " id="address " cols="30 " rows="10 "></textarea>
+
+                    </div>
+
+
+
+
+
+                </form>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-12 col-md-6 p-0 d-flex justify-content-center ">
+                <a href=" " class="btn-pri bgblue spacebtn-pri d-inline-flex p-2 bd-highlight align-items-center justify-content-center ">
+                    <span class="text-button text-white ">Add Address</span>
+                </a>
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+    </div>
+
+
+</body>
+
+
+</html>
