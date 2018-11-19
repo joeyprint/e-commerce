@@ -2,7 +2,6 @@ package shop.ecommerce.OrderService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import shop.ecommerce.ProductAdapter.ProductAdapter;
 import shop.ecommerce.UserAdapter.UserAdapter;
 
@@ -12,10 +11,7 @@ public class OrderService {
     @Autowired
     private OrderRepository orderRepository;
 
-    @Autowired
     private UserAdapter userAdapter;
-
-    @Autowired
     private ProductAdapter productAdapter;
 
     public Order getOrder(long id) {
