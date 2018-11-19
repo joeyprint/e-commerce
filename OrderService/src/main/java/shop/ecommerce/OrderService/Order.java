@@ -25,6 +25,16 @@ public class Order implements Serializable {
     private Date createAt;
     private User user;
 
+    public Order() {
+    }
+
+    public Order(long id, Product product, Date createAt, User user) {
+        this.id = id;
+        this.product = product;
+        this.createAt = createAt;
+        this.user = user;
+    }
+
     public long getId() {
         return this.id;
     }
@@ -49,12 +59,14 @@ public class Order implements Serializable {
         this.createAt = createAt;
     }
 
-    public Order(Product product, Date createAt) {
-        this.product = product;
-        this.createAt = createAt;
+    public User getUser() {
+        return this.user;
     }
 
-    public Order() {
+    public void setUser(User user) {
+        this.user = user;
     }
+
+
 
 }
