@@ -1,28 +1,22 @@
-package shop.ecommerce.UserService;
+package shop.ecommerce.UserService.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import shop.ecommerce.UserService.model.User;
+import shop.ecommerce.UserService.expcetion.UserNotFoundException;
+import shop.ecommerce.UserService.service.UserService;
 
-import javax.swing.text.html.Option;
 import javax.validation.Valid;
-import java.util.Optional;
 
-@RequestMapping("/")
-@Controller
+
+@CrossOrigin("*")
+@RestController
 public class UserController {
 
     @Autowired
     private UserService userService;
-
-    @PostMapping("/user")
-    public ResponseEntity<?> findOrCreate(@Valid @RequestBody User user) {
-        System.out.println("inbound user find UserService /user");
-        System.out.println(user.getFirstname());
-        return new ResponseEntity<Optional<User>>(userService.findOrCreate(user), HttpStatus.OK);
-    }
 
     @GetMapping("/user/{id}")
     public ResponseEntity<User> viewUserDetail(@PathVariable(name = "id") long userId) {
