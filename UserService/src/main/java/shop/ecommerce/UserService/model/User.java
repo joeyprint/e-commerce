@@ -1,5 +1,7 @@
 package shop.ecommerce.UserService;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
@@ -12,11 +14,13 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotBlank
-    private String name;
+    private String facebookId;
 
     @NotBlank
-    private String surname;
+    private String firstname;
+
+    @NotBlank
+    private String lastname;
 
     @NotBlank
     private String email;
@@ -24,14 +28,7 @@ public class User implements Serializable {
     @Column(columnDefinition = "TEXT")
     private String address;
 
-    @Column(name="tel_no")
     private String telNo;
-
-    public User(@NotBlank String name, @NotBlank String surname, @NotBlank String email) {
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
-    }
 
     public User() {
         super();
@@ -41,12 +38,28 @@ public class User implements Serializable {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getFacebookId() {
+        return facebookId;
     }
 
-    public String getSurname() {
-        return surname;
+    public void setFacebookId(String facebookId) {
+        this.facebookId = facebookId;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getEmail() {
@@ -63,14 +76,6 @@ public class User implements Serializable {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
     }
 
     public void setEmail(String email) {

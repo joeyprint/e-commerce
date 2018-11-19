@@ -12,10 +12,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
-
 @Controller
 public class WebController {
+
+  @GetMapping("/facebook")
+  public String facebookLogin() {
+    return "facebookLogin";
+  }
 
   @GetMapping("/")
   public String home(Model model) {
@@ -63,8 +66,5 @@ public class WebController {
   public String getCreditPayment(){
   return "addCredit";
 }
-
-
-  
 
 }
