@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import shop.ecommerce.OrderService.DTO.PaymentToken;
 import shop.ecommerce.OrderService.exception.OmiseClientException;
 import shop.ecommerce.OrderService.exception.OmiseExpcetion;
 import shop.ecommerce.OrderService.exception.ResponseIOException;
 import shop.ecommerce.OrderService.model.ChargeResult;
-import shop.ecommerce.OrderService.model.Payment;
 import shop.ecommerce.OrderService.service.OmiseService;
 
 import java.io.IOException;
@@ -28,7 +28,7 @@ public class OmiseController {
   private OmiseService omiseService;
 
   @PostMapping("/payment")
-  public ResponseEntity<ChargeResult> create(@RequestBody Payment payment) {
+  public ResponseEntity<ChargeResult> create(@RequestBody PaymentToken payment) {
     Charge omiseCharge = null;
     try {
       omiseCharge = omiseService.charge(payment.getToken(), payment.getAmount());
