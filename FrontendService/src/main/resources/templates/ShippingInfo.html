@@ -30,9 +30,10 @@
 
 
                 <section id="content">
-                    <div th:if="${user == null}" class="row justify-content-center">
+
+                    <div th:if="${user.address == null}" class="row justify-content-center">
                         <div class="row col-md-12 justify-content-center space-subtext ">
-                            <div class="subtext ">
+                            <div class="subtext-desc">
                                 <span>You didn't add your addres</span>
                             </div>
                         </div>
@@ -46,7 +47,7 @@
                         </div>
                     </div>
 
-                    <div th:unless="${user == null}" class="row">
+                    <div th:unless="${user.address == null}" class="row">
                         <div class="col-12">
                             <div class="d-flex justify-content-between text-primary mt-2">
                                 <div>Address</div>
@@ -58,10 +59,10 @@
                         </div>
                         <div class="col-12">
                             <div class="row">
-                                <div class="col-3 text-right">
+                                <div class="col-3 col-md-2 text-right">
                                     <strong class="subtext-desc">Address:</strong>
                                 </div>
-                                <div class="col-9">
+                                <div class="col-9 col-md-10">
                                     <p class="subtext-info" th:text="${user.address}"></p>
                                 </div>
                             </div>
@@ -74,7 +75,7 @@
         </div>
 
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-3">
             <div class="col-12 col-md-9 col-xl-6 bg-white space-white-box">
 
                 <section id="content ">
@@ -93,12 +94,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
-
-
 
                     <div th:unless="${creditcard == null}" class="row">
                         <div class="col-12">
@@ -157,7 +152,7 @@
 
     <div class="btn-bottom d-flex justify-content-center ">
         <div class="col-12 p-0 ">
-            <a href=" " class="bg-primary full-width full-height d-flex align-items-center justify-content-center ">
+            <a href=" " th:classappend="${user.address == null || creditcard == null } ? 'disabled' : ''" class="bg-primary full-width full-height d-flex align-items-center justify-content-center ">
                 <span class="text-title text-white ">Pay Now</span>
             </a>
         </div>
