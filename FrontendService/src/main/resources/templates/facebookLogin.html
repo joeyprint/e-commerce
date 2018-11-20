@@ -30,6 +30,9 @@
 </head>
 <body>
     <div id="app">
+        <div class="d-none">
+            <a th:href="${redirect} != null ? ${redirect} : '/'" id="redirect"></a>
+        </div>
         <div v-if="authStatus === 'checking'">
             Checking login status...
         </div>
@@ -116,8 +119,8 @@
                         const data = await axios.post('http://localhost:8081/auth/facebook', form)
                         if (data) {
                             Cookies.set('x-token', data.data.token)
+                            document.querySelector('#redirect').click()
                         }
-                        console.log(data)
                         this.id = authResponse.userID
                         console.log('onAuthResponseChange', authResponse && authResponse.userID)
                     }
