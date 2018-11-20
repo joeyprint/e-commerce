@@ -1,37 +1,34 @@
 package shop.ecommerce.OrderService.controller;
 
-import co.omise.Client;
 import co.omise.ClientException;
 import co.omise.models.Charge;
 import co.omise.models.OmiseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import shop.ecommerce.OrderService.DTO.PaymentToken;
 import shop.ecommerce.OrderService.exception.OmiseClientException;
 import shop.ecommerce.OrderService.exception.OmiseExpcetion;
 import shop.ecommerce.OrderService.exception.ResponseIOException;
 import shop.ecommerce.OrderService.model.ChargeResult;
-import shop.ecommerce.OrderService.service.OmiseService;
+import shop.ecommerce.OrderService.model.Payment;
+import shop.ecommerce.OrderService.service.PaymentService;
 
 import java.io.IOException;
 
 @CrossOrigin("*")
 @RestController
-public class OmiseController {
+public class PaymentController {
 
   @Autowired
-  private OmiseService omiseService;
+  private PaymentService paymentService;
 
   @PostMapping("/payment")
-  public ResponseEntity<ChargeResult> create(@RequestBody PaymentToken payment) {
+  public ResponseEntity<ChargeResult> charge(@RequestBody PaymentToken payment) {
     Charge omiseCharge = null;
     try {
-      omiseCharge = omiseService.charge(payment.getToken(), payment.getAmount());
+      omiseCharge = paymentService.charge(payment.getToken(), payment.getAmount());
     } catch (IOException e) {
       throw new ResponseIOException(e.getMessage(), e.getCause());
     } catch (OmiseException e) {
@@ -42,5 +39,10 @@ public class OmiseController {
     }
     ChargeResult chargeResult = new ChargeResult(omiseCharge.getId(), omiseCharge.getAmount(), omiseCharge.getCurrency(), omiseCharge.getStatus().toString());
     return new ResponseEntity<>(chargeResult , HttpStatus.OK);
+  }
+
+  @GetMapping("/payment/user/{user_id}")
+  public ResponseEntity<Payment> getPaymentByUserId(@PathVariable("user_id") long userId) {
+    return new ResponseEntity<Payment>(paymentService.getPaymentByUserId(userId), HttpStatus.OK);
   }
 }
