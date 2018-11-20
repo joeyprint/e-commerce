@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import th.in.shopdi.FrontendService.DTO.CreditCard;
+import th.in.shopdi.FrontendService.DTO.Payment;
 import th.in.shopdi.FrontendService.model.Product;
 import th.in.shopdi.FrontendService.model.User;
 
@@ -54,6 +56,17 @@ public class WebController {
     user.setUserName("noname");
     user.setAddress("nowhere");
     model.addAttribute("user", user);
+    return "ShippingInfo";
+  }
+
+  @GetMapping("/ship/payment")
+  public String getShipInfoWithPayment(Model model) {
+    CreditCard creditCard = new CreditCard();
+    creditCard.setCardnumber("1234567890123456");
+    creditCard.setFullname("Putchamon Pueakaim");
+    creditCard.setExpiredMonth("06");
+    creditCard.setExpiredYear("21");
+    model.addAttribute("creditcard", creditCard);
     return "ShippingInfo";
   }
 
