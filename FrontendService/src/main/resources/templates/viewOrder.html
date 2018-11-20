@@ -35,14 +35,14 @@
                         </div>
                     </div>
                     <div class="col-5">
-                        <img class="full-width" src="https://dynamic.zacdn.com/N6uhkiChUf926vnTvBMCfv2fJTE=/fit-in/346x500/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/pomelo-2229-0786741-5.jpg">
+                        <img class="full-width" th:src="${order.product.thumbnail}">
                     </div>
                     <div class="col-7">
                         <div class=" text text-title">
-                            <p>Evalina</p>
+                            <p th:text="${order.product.name}"></p>
                         </div>
                         <div class=" text-title">
-                            <p>฿450</p>
+                            <p th:text="${'฿' + #numbers.formatDecimal(order.product.price, 0, 'COMMA', 2, 'POINT')}"></p>
                         </div>
                     </div>
                     <div class="col-12">
@@ -53,7 +53,7 @@
                             Total
                         </div>
                         <div>
-                            ฿450
+                            <p th:text="${'฿' + #numbers.formatDecimal(order.product.price, 0, 'COMMA', 2, 'POINT')}"></p>
                         </div>
                     </div>
                     <div class="col-12">
@@ -63,7 +63,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5>Address</h5>
-                                <p>126 Phracha Unit</p>
+                                <p th:text="${order.user.address}"></p>
                             </div>
                         </div>
                     </div>
@@ -71,8 +71,9 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5>Payment</h5>
-                                <p>Card: 4242 4242 4242 4242</p>
-
+                                <p>Holder: [[${payment.holderName}]]</p>
+                                <p>Card: [[${payment.cardNumber}]]</p>
+                                <p>Expired Date: [[${payment.expiredMonth}]] / [[${payment.expiredYear}]]</p>
                             </div>
                         </div>
                     </div>
