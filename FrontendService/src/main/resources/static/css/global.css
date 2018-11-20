@@ -58,3 +58,6 @@ body {
 button.bg-primary:hover {
   background-color: #097ebe !important;
 }
+.pointer {
+  cursor: pointer;
+}
