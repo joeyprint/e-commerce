@@ -1,25 +1,8 @@
-package shop.ecommerce.OrderService;
+package th.in.shopdi.FrontendService.DTO;
 
-import java.io.Serializable;
 import java.util.Date;
-import java.util.Locale.Category;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-
-import shop.ecommerce.ProductAdapter.Product;
-import shop.ecommerce.UserAdapter.User;
-
-@Entity
-@Table(name = "orders")
-public class Order implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Order {
     private long id;
     private Product product;
     private Date createAt;
@@ -66,7 +49,6 @@ public class Order implements Serializable {
     public void setUser(User user) {
         this.user = user;
     }
-
 
 
 }

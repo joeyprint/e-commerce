@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import th.in.shopdi.FrontendService.DTO.CreditCard;
+import th.in.shopdi.FrontendService.DTO.Order;
 import th.in.shopdi.FrontendService.DTO.Payment;
 import th.in.shopdi.FrontendService.DTO.Product;
+import th.in.shopdi.FrontendService.adapter.OrderAdapter;
 import th.in.shopdi.FrontendService.adapter.ProductAdapter;
 import th.in.shopdi.FrontendService.model.User;
 
@@ -21,6 +23,9 @@ public class WebController {
 
   @Autowired
   private ProductAdapter productAdapter;
+  
+  @Autowired
+  private OrderAdapter orderAdapter;
 
   @GetMapping("/facebook")
   public String facebookLogin() {
@@ -80,15 +85,16 @@ public class WebController {
     return "addCredit";
   }
 
-  @GetMapping("/vieworder")
-  public String getproductDetail(Model model) {
-    Product product = new Product();
-    product.setDetail("<strong>เสื้อลายใหม่ !!</strong><p>สวยมาก ราคาพิเศษ</p>");
-    product.setThumbnail(
-        "https://dynamic.zacdn.com/N6uhkiChUf926vnTvBMCfv2fJTE=/fit-in/346x500/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/pomelo-2229-0786741-5.jpg");
-    product.setPrice(450);
-    product.setName("Evalina Wide");
-    model.addAttribute("product", product);
+  @GetMapping("/vieworder/{order_id}")
+  public String orderDetail(@PathVariable(name = "order_id") long orderId, Model model) {
+    // Product product = new Product();
+    // product.setDetail("<strong>เสื้อลายใหม่ !!</strong><p>สวยมาก ราคาพิเศษ</p>");
+    // product.setThumbnail(
+    //     "https://dynamic.zacdn.com/N6uhkiChUf926vnTvBMCfv2fJTE=/fit-in/346x500/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/pomelo-2229-0786741-5.jpg");
+    // product.setPrice(450);
+    // product.setName("Evalina Wide");
+    Order order = orderAdapter.getOrderDetail(orderId);
+    model.addAttribute("order", order);
     return "viewOrder";
   }
 
