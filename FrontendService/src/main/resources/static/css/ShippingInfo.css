@@ -60,9 +60,10 @@ body {
     border-radius: 24.5px;
 }
 
-.space-subtext {
-    padding-top: 30px;
-    padding-bottom: 10px;
+.head-box {
+    margin: 2px;
+    border-bottom: 1px solid #e5e5e5;
+    justify-content: space-between;
 }
 
 .spacebtn-pri {
@@ -70,9 +71,48 @@ body {
 }
 
 .space-white-box {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .text-button {
     font-size: 14px;
+}
+
+.subtext-add {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 18px;
+    color: var(--primary) !important;
+}
+
+.subtext-edit {
+    margin-bottom: 10px;
+    margin-top: 15px;
+    font-size: 12px;
+    text-decoration-line: underline;
+    color: var(--primary) !important;
+}
+
+.subtext-info {
+    padding-top: 3px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-bottom: 20px;
+    font-size: 14px;
+}
+
+.subtext-desc {
+    padding-top: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-bottom: 20px;
+    font-size: 14px;
+}
+
+.text-dis {
+    color: #e0e0e0;
+}
+
+.space-btw {
+    justify-content: space-around;
 }

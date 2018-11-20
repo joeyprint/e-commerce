@@ -53,8 +53,8 @@ public class WebController {
   @GetMapping("/ship")
   public String getShippInfo(Model model) {
     User user = new User();
-    user.setUserName("noname");
-    user.setAddress("nowhere");
+    user.setUserName("Putchamon Pueakaim");
+    user.setAddress("1/78 Rana II,road Thakham, Bangkontheian, Bangkok 10150");
     model.addAttribute("user", user);
     return "ShippingInfo";
   }
@@ -76,16 +76,28 @@ public class WebController {
   }
 
   @GetMapping("/addAddress")
-  public String getaddAddress() {
+  public String getaddAddress(Model model) {
+    User user = new User();
+    user.setUserName("noname");
+    user.setAddress("1/78 Rana II,road Thakham, Bangkontheian, Bangkok 10150");
+    model.addAttribute("user", user);
     return "addAddress";
   }
+
   @GetMapping("/payment")
-  public String getCreditPayment(){
-  return "addCredit";
-}
+  public String getCreditPayment() {
+    return "addCredit";
+  }
 
   @GetMapping("/vieworder")
-  public String getViewOrder(){
+  public String getproductDetail(Model model) {
+    Product product = new Product();
+    product.setDescription("<strong>เสื้อลายใหม่ !!</strong><p>สวยมาก ราคาพิเศษ</p>");
+    product.setImageURL(
+        "https://dynamic.zacdn.com/N6uhkiChUf926vnTvBMCfv2fJTE=/fit-in/346x500/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/pomelo-2229-0786741-5.jpg");
+    product.setPrice(450);
+    product.setProductname("Evalina Wide");
+    model.addAttribute("product", product);
     return "viewOrder";
   }
 

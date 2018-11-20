@@ -8,28 +8,29 @@
 </head>
 
 <body>
-    <nav class="navbar bg-primary text-white fixed-top">
+    <nav class="navbar bg-primary text-white fixed-top ">
         <div class="row full-width">
             <div class="col-2">
                 <a href="/" title="back to home page">
                     <i class="fa fa-chevron-left back-icon"></i>
                 </a>
             </div>
-            <div class="col-10 align-items-center">
-                <span class="navbar-brand mx-auto h1 align-items-center justify-content-center">Shipping Info</span>
+            <div class="col-8 text-center">
+                <span class="navbar-brand mx-auto h1">Shipping Info</span>
             </div>
+
+            <div class="col-2"></div>
         </div>
     </nav>
 
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-6 bg-white space-white-box">
+            <div class="col-12 col-md-9 col-xl-6 bg-white space-white-box">
+
+
                 <section id="content">
-                    <div
-                        th:if="${user == null}"
-                        class="row justify-content-center"
-                    >
+                    <div th:if="${user == null}" class="row justify-content-center">
                         <div class="row col-md-12 justify-content-center space-subtext ">
                             <div class="subtext ">
                                 <span>You didn't add your addres</span>
@@ -45,10 +46,7 @@
                         </div>
                     </div>
 
-                    <div
-                        th:unless="${user == null}"
-                        class="row"
-                    >
+                    <div th:unless="${user == null}" class="row">
                         <div class="col-12">
                             <div class="d-flex justify-content-between text-primary mt-2">
                                 <div>Address</div>
@@ -60,45 +58,49 @@
                         </div>
                         <div class="col-12">
                             <div class="row">
-                                <div class="col-5 text-right">
-                                    <strong>Address:</strong>
+                                <div class="col-3 text-right">
+                                    <strong class="subtext-desc">Address:</strong>
                                 </div>
-                                <div class="col-7">
-                                    <p th:text="${user.address}"></p>
+                                <div class="col-9">
+                                    <p class="subtext-info" th:text="${user.address}"></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
+
+
             </div>
         </div>
+
+
         <div class="row justify-content-center">
-            <div class="col-12 col-md-6 bg-white ">
+            <div class="col-12 col-md-9 col-xl-6 bg-white space-white-box">
+
                 <section id="content ">
-                    <div
-                        th:if="${creditcard == null}"
-                        class="row justify-content-center"
-                    >
+                    <div th:if="${creditcard == null}" class="row justify-content-center">
                         <div class="row col-md-12 justify-content-center space-subtext ">
-                            <div class="subtext ">
+                            <div class="subtext-desc">
                                 <span>You didn't add your payment</span>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-12">
-                                <a href="" class="btn-pri bg-primary my-4 d-inline-flex p-2 bd-highlight align-items-center justify-content-center">
+                                <a href="/payment" class="btn-pri bg-primary my-4 d-inline-flex p-2 bd-highlight align-items-center justify-content-center">
                                     <span class="text-button text-white ">Add Payment</span>
                                 </a>
                             </div>
                         </div>
-
                     </div>
 
-                    <div
-                        th:unless="${creditcard == null}"
-                        class="row"
-                    >
+
+
+
+
+
+
+                    <div th:unless="${creditcard == null}" class="row">
                         <div class="col-12">
                             <div class="d-flex justify-content-between text-primary mt-2">
                                 <div>Payment</div>
@@ -138,16 +140,29 @@
                 </section>
             </div>
 
-            <div class="btn-bottom d-flex justify-content-center ">
-                <div class="col-12 col-md-6 p-0 ">
-                    <a href=" " class="bg-primary full-width full-height d-flex align-items-center justify-content-center ">
-                        <span class="text-title text-white ">Pay Now</span>
-                    </a>
-                </div>
-            </div>
+        </div>
+
+
+    </div>
+
+
+
+    </div>
+
+
+
+    </div>
+
+
+
+    <div class="btn-bottom d-flex justify-content-center ">
+        <div class="col-12 p-0 ">
+            <a href=" " class="bg-primary full-width full-height d-flex align-items-center justify-content-center ">
+                <span class="text-title text-white ">Pay Now</span>
+            </a>
         </div>
     </div>
-    </div>
+
 
 </body>
 
