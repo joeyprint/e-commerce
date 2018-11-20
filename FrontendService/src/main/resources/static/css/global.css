@@ -61,3 +61,8 @@ button.bg-primary:hover {
 .pointer {
   cursor: pointer;
 }
+a.disabled {
+  pointer-events: none;
+  background-color: #b4b4b4 !important;
+  cursor: not-allowed;
+}
