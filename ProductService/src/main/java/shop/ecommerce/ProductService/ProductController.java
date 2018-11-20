@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import shop.ecommerce.ProductService.exception.ProductNotFoundException;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -30,9 +31,12 @@ public class ProductController {
     }
 
     @GetMapping("/product/{product_id}")
-    public ResponseEntity<Product> getProductDetail(@PathVariable("product_id") long productId)  {
-        Product getProductDetail = productService.getProductDetail(productId);
-        return new ResponseEntity<Product>(getProductDetail,HttpStatus.OK);
+    public ResponseEntity<Product> getProductById(@PathVariable("product_id") long productId)  {
+        Product product = productService.getProductDetail(productId);
+        if (product == null) {
+            throw new ProductNotFoundException(String.format("Product not found for id:", productId));
+        }
+        return new ResponseEntity<Product>(product, HttpStatus.OK);
     }
 
 }
