@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import th.in.shopdi.FrontendService.DTO.*;
 import th.in.shopdi.FrontendService.adapter.OrderAdapter;
+import th.in.shopdi.FrontendService.adapter.PaymentAdapter;
 import th.in.shopdi.FrontendService.adapter.ProductAdapter;
 import th.in.shopdi.FrontendService.adapter.UserAdapter;
 
@@ -27,6 +28,9 @@ public class WebController {
 
   @Autowired
   private UserAdapter userAdapter;
+
+  @Autowired
+  private PaymentAdapter paymentAdapter ;
 
   @GetMapping("/login")
   public String facebookLogin(
@@ -106,8 +110,9 @@ public class WebController {
   @GetMapping("/vieworder/{order_id}")
   public String orderDetail(@PathVariable(name = "order_id") long orderId, Model model) {
     OrderMapObject order = orderAdapter.getOrderDetail(orderId);
-
+    Payment payment = paymentAdapter.getPaymentByUserId(order.getUser().getId());
     model.addAttribute("order", order);
+    model.addAttribute("payment", payment);
     return "viewOrder";
   }
 
