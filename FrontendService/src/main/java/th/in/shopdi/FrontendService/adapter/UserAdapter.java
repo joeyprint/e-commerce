@@ -11,4 +11,10 @@ public class UserAdapter {
     System.out.println("get user adpter");
     return restTemplate.postForObject(url + "/user", user, User.class);
   }
+
+  public User getUserDetail(long userId) {
+    RestTemplate restTemplate = new RestTemplate();
+    String url = "http://localhost:8081";
+    return restTemplate.getForObject(url + "/user/" + userId, user, User.class);
+  }
 }
