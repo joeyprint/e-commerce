@@ -34,10 +34,13 @@ public class WebController {
 
   @GetMapping("/login")
   public String facebookLogin(
-          @ModelAttribute("redirect") String redirect,
+          @ModelAttribute("redirect-url") String redirect,
           Model model) {
-    System.out.println("/login" + redirect);
-    model.addAttribute("redirect", redirect);
+    System.out.println("/login>" + redirect + "<");
+    if (redirect.length() != 0) {
+      model.addAttribute("redirect", redirect);
+    }
+
     return "facebookLogin";
   }
 
@@ -64,7 +67,7 @@ public class WebController {
     if (!productId.isPresent()) {
       return "redirect:/";
     }
-    redirectAttributes.addFlashAttribute("redirect", "/ship?item=" + productId.get());
+    redirectAttributes.addFlashAttribute("redirect-url", "/ship?item=" + productId.get());
     if (token == null) {
       return "redirect:/login";
     }
