@@ -55,3 +55,6 @@ body {
 .product-price {
   font-size: 30px;
 }
+button.bg-primary:hover {
+  background-color: #097ebe !important;
+}
