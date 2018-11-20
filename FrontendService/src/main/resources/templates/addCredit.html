@@ -23,32 +23,41 @@
             <div class="col-2"></div>
         </div>
     </nav>
-
-
-
-    <div class="row col-12  justify-content-center">
-
-        <div class="col-12 col-md-8 col-lg-6 col-xl-6 justify-content-center">
-            <form>
-
-                <div class="row col-12 row nomargin spaceBox ">
-                    <label>Account Name</label>
-                    <input class="full-height full-width " type="text " id="fname " name="firstname ">
-                </div>
-            </form>
-            <div class="container" id="credit">
-                <form @submit.prevent="onsubmit" action="/order" method="POST">
+    <div class="container" id="credit">
+        <form @submit.prevent="onsubmit" action="/order" method="POST">
+            <div class="row ่ justify-content-center">
+                <div class="col-12 col-md-6 card">
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="accName">Account Name</label>
-                                <input type="text" id="accName" name="accountname" placeholder="Fullname" required v-model="name">
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    id="accName"
+                                    name="accountname"
+                                    placeholder="Fullname"
+                                    required
+                                    v-model="name"
+                                >
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="cardNum">Card Number</label>
-                                <input type="text" id="cardNum" name="cardnumber" placeholder="•••• •••• •••• ••••" required @input="cardChange" :value="number" minlength="19" maxlength="19" autocomplete="off">
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    id="cardNum"
+                                    name="cardnumber"
+                                    placeholder="•••• •••• •••• ••••"
+                                    required
+                                    @input="cardChange"
+                                    :value="number"
+                                    minlength="19"
+                                    maxlength="19"
+                                    autocomplete="off"
+                                >
                             </div>
                         </div>
                         <div class="col-6">
@@ -56,10 +65,30 @@
                                 <label for="expire-month">Expire Date</label>
                                 <div class="row">
                                     <div class="col-6 col-sm-5 pr-1">
-                                        <input type="text" id="expire-month" name="expire-month" placeholder="MM" required v-model="month" minlength="2" maxlength="2">
+                                        <input
+                                            class="form-control"
+                                            type="text"
+                                            id="expire-month"
+                                            name="expire-month"
+                                            placeholder="MM"
+                                            required
+                                            v-model="month"
+                                            minlength="2"
+                                            maxlength="2"
+                                        >
                                     </div>
                                     <div class="col-6 col-sm-5 pl-1">
-                                        <input type="text" id="expire-year" name="expire-year" placeholder="YY" required v-model="year" minlength="2" maxlength="2">
+                                        <input
+                                            class="form-control"
+                                            type="text"
+                                            id="expire-year"
+                                            name="expire-year"
+                                            placeholder="YY"
+                                            required
+                                            v-model="year"
+                                            minlength="2"
+                                            maxlength="2"
+                                        >
                                     </div>
                                 </div>
                             </div>
@@ -67,68 +96,86 @@
                         <div class="col-4">
                             <div class="form-group">
                                 <label for="cvv">CVV</label>
-                                <input type="text" id="cvv" name="cvv" placeholder="•••" required v-model="cvv" pattern="[0-9]*" autocomplete="off" minlength="3" maxlength="3">
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    id="cvv"
+                                    name="cvv"
+                                    placeholder="•••"
+                                    required
+                                    v-model="cvv"
+                                    pattern="[0-9]*"
+                                    autocomplete="off"
+                                    minlength="3"
+                                    maxlength="3"
+                                >
                             </div>
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <button :disabled="disabledSubmit" type="submit" class="btn-pri my-4 d-inline-flex p-2 bd-highlight align-items-center justify-content-center">
-                <span class="text-button text-white">Add Payment</span>
-            </button>
+                        <button
+                            :disabled="disabledSubmit"
+                            type="submit"
+                            class="btn bg-primary btn-pri my-3 d-inline-flex p-2 bd-highlight align-items-center justify-content-center"
+                        >
+                            <span class="text-button text-white">Add Payment</span>
+                        </button>
                     </div>
-                </form>
+                </div>
             </div>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
-            <script src="https://cdn.omise.co/omise.js"></script>
-            <script>
-                const app = new Vue({
-                    el: '#credit',
-                    data() {
-                        return {
-                            token: '',
-                            name: '',
-                            number: '',
-                            month: '',
-                            year: '',
-                            cvv: '',
-                            disabledSubmit: false
-                        }
-                    },
-                    methods: {
-                        cardChange(event) {
-                            this.number = event.target.value.replace(/[^0-9.]/gi, '').replace(/(.{4})/g, '$1 ').trim()
-                                // this.set()
-                            console.log(this.number)
-                        },
-                        onsubmit(event) {
-                            console.log('submit')
-                            this.disabledSubmit = true
-                            const card = {
-                                name: this.name,
-                                number: this.number,
-                                expiration_month: this.month,
-                                expiration_year: this.year,
-                                security_code: this.cvv
-                            }
-                            const self = this
-                            Omise.createToken('card', card, function(statusCode, response) {
-                                self.disabledSubmit = false
-                                if (statusCode === 200) {
-                                    console.log(response.id)
-                                    self.token = response.id
-                                        // event.target.submit()
-                                } else {
-                                    console.log('errror', response.message)
-                                        // alert(response.message)
-                                }
-                            })
-                        }
-                    },
-                    mounted() {
-                        Omise.setPublicKey("pkey_test_5dv3rbanbf397y1ce2r")
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+    <script src="https://cdn.omise.co/omise.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#credit',
+            data() {
+                return {
+                    token: '',
+                    name: '',
+                    number: '',
+                    month: '',
+                    year: '',
+                    cvv: '',
+                    disabledSubmit: false
+                }
+            },
+            methods: {
+                cardChange(event) {
+                    this.number = event.target.value.replace(/[^0-9.]/gi, '').replace(/(.{4})/g, '$1 ').trim()
+                        // this.set()
+                    console.log(this.number)
+                },
+                onsubmit(event) {
+                    console.log('submit')
+                    this.disabledSubmit = true
+                    const card = {
+                        name: this.name,
+                        number: this.number,
+                        expiration_month: this.month,
+                        expiration_year: this.year,
+                        security_code: this.cvv
                     }
-                })
-            </script>
+                    const self = this
+                    Omise.createToken('card', card, function(statusCode, response) {
+                        self.disabledSubmit = false
+                        if (statusCode === 200) {
+                            console.log(response.id)
+                            self.token = response.id
+                                // event.target.submit()
+                        } else {
+                            console.log('errror', response.message)
+                                // alert(response.message)
+                        }
+                    })
+                }
+            },
+            mounted() {
+                Omise.setPublicKey("pkey_test_5dv3rbanbf397y1ce2r")
+            }
+        })
+    </script>
 </body>
 
 </html>
