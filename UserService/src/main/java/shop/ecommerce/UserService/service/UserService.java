@@ -26,6 +26,10 @@ public class UserService {
         return userRepositoryInterface.save(newUser);
     }
 
+    public User findByUserId(long userId) {
+        return userRepositoryInterface.findById(userId);
+    }
+
     private static User mapUserfromFacebookAccount(FacebookAccount facebookAccount) {
         User user = new User();
         System.out.println(facebookAccount.getFirstname());
