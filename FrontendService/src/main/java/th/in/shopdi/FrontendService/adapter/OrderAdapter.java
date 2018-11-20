@@ -1,10 +1,12 @@
 package th.in.shopdi.FrontendService.adapter;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import th.in.shopdi.FrontendService.DTO.Order;
 
+@Service
 public class OrderAdapter {
 
     @Value("${order.service.url}")
