@@ -1,47 +1,77 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head th:replace="fragments/defaultTemplate :: defaultHead (title='Addcredit')"></head>
+
 <head>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/Addcredit.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/form.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/ShippingInfo.css}">
 </head>
-<body>
-        <nav class="navbar bg-primary text-white fixed-top">
-                
-                <div class="row full-width">
-                    <div class="col-2">
-                        <a href="/" title="back to home page">
-                            <i class="fa fa-chevron-left back-icon"></i>
-                        </a>
-                    </div>
-                    <div class="col-10">
-                        <span class="navbar-brand mx-auto h1 align-items-center justify-content-center">Add Payment</span>            
-                    </div>
-                </div>
-            </nav>
-    <div class="container">
-        <label for="PaymentType">Payment Type</label>
-        <input type="text" id="Type" name="credit">
-        
-        <label for="accName">Account Name</label>
-        <input type="text" id="accName" name="accountname" placeholder="ex.Lee Avatar">
 
-        <label for="cardNum">Card Number</label>
-        <input type="text" id="cardNum" name="cardnumber" placeholder="ex. 1 - 30258 - 2365">
-
-        <label for="ExpDate">Expire Date</label>
-        <input type="text" id="ExpDate" name="expiredate" placeholder="MM - YYY">
-
-        <label for="cvv">CVV</label>
-        <input type="text" id="cvv" name="cvv" placeholder="ex.111">
-
-        <div class="btn-bottom d-flex justify-content-center">
-                <div class="col-12 col-md-6 p-0">
-                    <a href="" class="full-width full-height d-flex align-items-center justify-content-center">
-                        <span class="text-title text-white">Add Payment</span>
-                    </a>
-                </div>
+<body class="bg">
+    <nav class="navbar bg-primary text-white fixed-top ">
+        <div class="row full-width">
+            <div class="col-2">
+                <a href="/ship" title="back to home page">
+                    <i class="fa fa-chevron-left back-icon"></i>
+                </a>
             </div>
+            <div class="col-8 text-center">
+                <span class="navbar-brand mx-auto h1">Add Credit</span>
+            </div>
+
+            <div class="col-2"></div>
+        </div>
+    </nav>
+
+
+
+    <div class="row col-12  justify-content-center">
+
+        <div class="col-12 col-md-8 col-lg-6 col-xl-6 justify-content-center">
+            <form>
+
+                <div class="row col-12 row nomargin spaceBox ">
+                    <label>Account Name</label>
+                    <input class="full-height full-width " type="text " id="fname " name="firstname ">
+                </div>
+
+                <div class="row col-12 row nomargin spaceBox">
+                    <label>Card Number</label>
+                    <input class="col-12 full-height full-width " name="address " id="address " cols="30 " rows="10 ">
+
+                </div>
+
+                <div class="row col-12 row nomargin spaceBox ">
+                    <label>Expire Date</label>
+                    <input class="col-12 full-height full-width " name="address " id="address" cols="30 " rows="10 ">
+
+                </div>
+
+                <div class="row col-12 row nomargin spaceBox">
+                    <label>CVV</label>
+                    <input class="col-12 full-height full-width " name="address" id="address" cols="30 " rows="10 ">
+
+                </div>
+
+
+
+
+
+            </form>
+        </div>
+
+    </div>
+
+
+    <div class="row justify-content-center">
+        <div>
+            <a href="" id="btn-addAdd" class="btn-pri bg-primary spacebtn-pri d-inline-flex p-2 bd-highlight align-items-center justify-content-center">
+                <span class="text-button text-white ">Add Credit</span>
+            </a>
+        </div>
     </div>
 
 </body>
+
 </html>
