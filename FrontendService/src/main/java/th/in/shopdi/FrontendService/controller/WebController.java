@@ -62,7 +62,8 @@ public class WebController {
   public String getShippInfo(
       @RequestParam("item") Optional<Long> productId,
       @CookieValue(value = "x-token", required = false) String token,
-      RedirectAttributes redirectAttributes
+      RedirectAttributes redirectAttributes,
+      Model model
   ) {
     if (!productId.isPresent()) {
       return "redirect:/";
@@ -73,7 +74,7 @@ public class WebController {
     }
     User user = null;
     try {
-      user = userAdapter.getProfileByToken(token);
+      model.addAttribute("user", userAdapter.getProfileByToken(token));
     } catch (Exception e) {
       return "redirect:/login";
     }
