@@ -31,73 +31,29 @@
     <div class="container">
 
 
-<<<<<<< HEAD
-        <div class="row col-12  justify-content-center">
-
-            <div class="col-12 col-xl-6 justify-content-center">
-
-                <div th:if="${user.address}">
-
-                    <form>
-                        <div class="row col-12 row nomargin spaceBox ">
-                            <label>Name</label>
-                            <input th:value="${user.userName}" class="col-12 full-height full-width " type="text " id="fname " name="firstname ">
-                        </div>
-
-                        <div class="row col-12 row nomargin ">
-                            <label>Address</label>
-                            <textarea th:text="${user.address}" class="col-12 full-height full-width " name="address " id="address " cols="30 " rows="10 "></textarea>
-
-                        </div>
-                    </form>
+        <div class="col-12 col-md-6">
+            <form>
+                <div class="form-group">
+                    <label for="fullname-input">Name</label>
+                    <input class="form-control" type="text " id="fullname-input" name="fullname" required>
                 </div>
-
-                <div th:unless="${user.address}">
-
-                    <form>
-                        <div class="row col-12 row nomargin spaceBox ">
-                            <label>Name</label>
-                            <input class="full-height full-width " type="text " id="fname " name="firstname ">
-                        </div>
-
-                        <div class="row col-12 row nomargin ">
-                            <label>Address</label>
-                            <textarea class="col-12 full-height full-width " name="address " id="address " cols="30 " rows="10 "></textarea>
-
-                        </div>
-                    </form>
+                <div class="form-group">
+                    <label for="address-input">Address</label>
+                    <textarea class="form-control" id="address-input" name="address" rows="10" required></textarea>
                 </div>
-=======
-            <div class="col-12 col-md-6">
-                <form>
-                    <div class="form-group">
-                        <label for="fullname-input">Name</label>
-                        <input class="form-control" type="text " id="fullname-input" name="fullname" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="address-input">Address</label>
-                        <textarea
-                            class="form-control"
-                            id="address-input"
-                            name="address"
-                            rows="10"
-                            required
-                        ></textarea>
-                    </div>
-                </form>
->>>>>>> master
-            </div>
-
-
-            <div class="row justify-content-center ">
-                <div>
-                    <a href="/ship" id="btn-addAdd " class="btn-pri bg-primary spacebtn-pri d-inline-flex p-2 bd-highlight align-items-center justify-content-center ">
-                        <span class="text-button text-white ">Add Address</span>
-                    </a>
-                </div>
-            </div>
-
+            </form>
         </div>
+
+
+        <div class="row justify-content-center ">
+            <div>
+                <a href="/ship" id="btn-addAdd " class="btn-pri bg-primary spacebtn-pri d-inline-flex p-2 bd-highlight align-items-center justify-content-center ">
+                    <span class="text-button text-white ">Add Address</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
 
 
 
