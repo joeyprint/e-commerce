@@ -9,7 +9,7 @@
 
 <body>
     <nav class="navbar bg-primary text-white fixed-top">
-        <div class="row full-width">
+        <div class="row full-width d-md-none">
             <div class="col-2">
                 <a href="/" title="back to home page">
                     <i class="fa fa-chevron-left back-icon"></i>
@@ -19,14 +19,23 @@
                 <span class="navbar-brand mx-auto h1 align-items-center justify-content-center">View Order</span>
             </div>
         </div>
+        <div th:replace="fragments/shopdiBanner :: banner"></div>
     </nav>
 
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6 bg-white spaceWhiteBox box-btn">
-                <div class="row ">
+        <div class="row justify-content-center mt-2">
+            <div class="col-12 col-md-6 bg-white spaceWhiteBox box-btn ">
+                <div class="row">
+                    <div class="col-12 d-none d-md-block">
+                        <h2>View Order</h2>
+                    </div>
+                    <div class="col-12">
+                        <div class="alert alert-success" role="alert">
+                            Your order success !
+                        </div>
+                    </div>
                     <div class="col-5">
-                        <img class="col-12" src="https://dynamic.zacdn.com/N6uhkiChUf926vnTvBMCfv2fJTE=/fit-in/346x500/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/pomelo-2229-0786741-5.jpg">
+                        <img class="full-width" src="https://dynamic.zacdn.com/N6uhkiChUf926vnTvBMCfv2fJTE=/fit-in/346x500/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/pomelo-2229-0786741-5.jpg">
                     </div>
                     <div class="col-7">
                         <div class=" text text-title">
@@ -36,16 +45,45 @@
                             <p>฿450</p>
                         </div>
                     </div>
+                    <div class="col-12">
+                        <hr>
+                    </div>
+                    <div class="col-12 d-flex justify-content-between">
+                        <div>
+                            Total
+                        </div>
+                        <div>
+                            ฿450
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <hr>
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5>Address</h5>
+                                <p>126 Phracha Unit</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5>Payment</h5>
+                                <p>Card: 4242 4242 4242 4242</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-4">
+                        <button class="btn bg-primary btn-block btn-lg text-white btn-bottom">
+                            Back to Home
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-
-
-
-
-
-    </div>
-    </div>
     </div>
 
 </body>
