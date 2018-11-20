@@ -8,78 +8,134 @@
 </head>
 
 <body>
-    <nav class="navbar bg-primary text-white fixed-top">
+    <nav class="navbar bg-primary text-white fixed-top ">
         <div class="row full-width">
             <div class="col-2">
                 <a href="/" title="back to home page">
                     <i class="fa fa-chevron-left back-icon"></i>
                 </a>
             </div>
-            <div class="col-10 align-items-center">
-                <span class="navbar-brand mx-auto h1 align-items-center justify-content-center">Shipping Info</span>
+            <div class="col-8 text-center">
+                <span class="navbar-brand mx-auto h1">Shipping Info</span>
             </div>
+
+            <div class="col-2"></div>
         </div>
     </nav>
 
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6 bg-white space-white-box">
-                <section id="content">
-                    <div class="row justify-content-center ">
-                        <div class="row col-md-12 justify-content-center space-subtext ">
-                            <div class="subtext ">
-                                <span>You didn't add your addres</span>
+    <div class="container-full">
+        <div class="justify-content-center">
+
+
+            <div class="row justify-content-center space-white-box">
+                <div class="col-12 col-lg-6 bg-white">
+
+                    <div th:if="${user.address}">
+
+                        <div class="row col-12 head-box ">
+                            <div class="subtext-add">
+                                <span>Address</span>
+                            </div>
+
+                            <div class="subtext-edit">
+                                <a href="/addAddress">edit address</a>
                             </div>
                         </div>
 
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-12 col-md-6 p-0 ">
-                                <a href="" id="btn-addAdd" class="btn-pri bg-primary spacebtn-pri d-inline-flex p-2 bd-highlight align-items-center justify-content-center">
+                        <div class="row justify-content-center">
+                            <div class="col-md-12 justify-content-center subtext-info">
+                                <div class="col-12 subtext justify-content-center">
+                                    <span th:text="${user.userName}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center">
+                            <div class="col-md-12 justify-content-center subtext-info">
+                                <div class="col-12 subtext justify-content-center">
+                                    <span th:text="${user.address}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div th:unless="${user.address}">
+                        <div class="row justify-content-center">
+                            <div class="col-md-12 justify-content-center subtext-info">
+                                <div class="text-center subtext-desc">
+                                    <span class="text-dis">You didn't add your address.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center">
+                            <div>
+                                <a th:href="${/addAddress}" id="btn-addAdd" class="btn-pri bg-primary spacebtn-pri d-inline-flex p-2 bd-highlight align-items-center justify-content-center">
                                     <span class="text-button text-white ">Add Address</span>
                                 </a>
                             </div>
                         </div>
-
                     </div>
 
-                </section>
+
+                </div>
+
+
+
+
             </div>
 
 
 
-            <div class="col-12 col-md-6 bg-white ">
-                <section id="content ">
-                    <div class="row justify-content-center ">
-                        <div class="row col-md-12 justify-content-center space-subtext ">
-                            <div class="subtext ">
-                                <span>You didn't add your payment</span>
+
+            <div class="row justify-content-center">
+
+                <div class="col-12 col-lg-6 bg-white">
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-12 justify-content-center subtext-info">
+                            <div class="text-center subtext-desc">
+                                <span class="text-dis">You didn't add your payment.</span>
                             </div>
                         </div>
-
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-12 col-md-6 p-0 ">
-                                <a href="" class="btn-pri bg-primary spacebtn-pri d-inline-flex p-2 bd-highlight align-items-center justify-content-center">
-                                    <span class="text-button text-white ">Add Payment</span>
-                                </a>
-                            </div>
-                        </div>
-
                     </div>
 
-                </section>
-            </div>
+                    <div class="row justify-content-center">
+                        <div>
+                            <a href="/payment" id="btn-addAdd" class="btn-pri bg-primary spacebtn-pri d-inline-flex p-2 bd-highlight align-items-center justify-content-center">
+                                <span class="text-button text-white ">Add Payment</span>
+                            </a>
+                        </div>
+                    </div>
 
-            <div class="btn-bottom d-flex justify-content-center ">
-                <div class="col-12 col-md-6 p-0 ">
-                    <a href=" " class="bg-primary full-width full-height d-flex align-items-center justify-content-center ">
-                        <span class="text-title text-white ">Pay Now</span>
-                    </a>
                 </div>
             </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+    </div>
+
+
+
+    <div class="btn-bottom d-flex justify-content-center ">
+        <div class="col-12 p-0 ">
+            <a href=" " class="bg-primary full-width full-height d-flex align-items-center justify-content-center ">
+                <span class="text-title text-white ">Pay Now</span>
+            </a>
         </div>
     </div>
-    </div>
+
 
 </body>
 
