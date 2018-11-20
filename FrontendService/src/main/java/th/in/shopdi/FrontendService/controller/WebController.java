@@ -6,14 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import th.in.shopdi.FrontendService.DTO.CreditCard;
-import th.in.shopdi.FrontendService.DTO.Order;
-import th.in.shopdi.FrontendService.DTO.Payment;
-import th.in.shopdi.FrontendService.DTO.Product;
+import th.in.shopdi.FrontendService.DTO.*;
 import th.in.shopdi.FrontendService.adapter.OrderAdapter;
 import th.in.shopdi.FrontendService.adapter.ProductAdapter;
 import th.in.shopdi.FrontendService.adapter.UserAdapter;
-import th.in.shopdi.FrontendService.DTO.User;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -92,11 +88,6 @@ public class WebController {
     return "ShippingInfo";
   }
 
-  @GetMapping("/shipping")
-  public String getShippInfo() {
-    return "ShippingInfo";
-  }
-
   @GetMapping("/addAddress")
   public String getaddAddress(Model model) {
     User user = new User();
@@ -114,13 +105,8 @@ public class WebController {
 
   @GetMapping("/vieworder/{order_id}")
   public String orderDetail(@PathVariable(name = "order_id") long orderId, Model model) {
-    // Product product = new Product();
-    // product.setDetail("<strong>เสื้อลายใหม่ !!</strong><p>สวยมาก ราคาพิเศษ</p>");
-    // product.setThumbnail(
-    //     "https://dynamic.zacdn.com/N6uhkiChUf926vnTvBMCfv2fJTE=/fit-in/346x500/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/pomelo-2229-0786741-5.jpg");
-    // product.setPrice(450);
-    // product.setName("Evalina Wide");
-    Order order = orderAdapter.getOrderDetail(orderId);
+    OrderMapObject order = orderAdapter.getOrderDetail(orderId);
+
     model.addAttribute("order", order);
     return "viewOrder";
   }
