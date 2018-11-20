@@ -44,16 +44,9 @@ public class WebController {
   }
 
   @GetMapping("/product/{product_id}")
-  public Product productDetail(@PathVariable(name = "product_id") long productId, Product product) {
-    // Product product = new Product();
-    
-    // product.setDescription("<strong>เสื้อลายใหม่ !!</strong><p>สวยมาก ราคาพิเศษ</p>");
-    // product.setImageURL(
-    //     "https://dynamic.zacdn.com/N6uhkiChUf926vnTvBMCfv2fJTE=/fit-in/346x500/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/pomelo-2229-0786741-5.jpg");
-    // product.setPrice(450);
-    // product.setProductname("Evalina Wide");
-    // model.addAttribute("product", product);
-    return productAdapter.getProductDetail(productId);
+  public String productDetail(@PathVariable(name = "product_id") long productId, Model model) {
+    model.addAttribute("product", productAdapter.getProductDetail(productId));
+    return "ProductDetail";
   }
 
   @GetMapping("/ship")
