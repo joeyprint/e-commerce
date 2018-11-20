@@ -16,15 +16,13 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
   @Override
   public void addInterceptors(InterceptorRegistry registry) {
-    registry.addInterceptor(new TokenInterceptor(jwtSecret))
-            .addPathPatterns(new String[] {"/test/**"});
-//    registry.addInterceptor(myInterceptor());
+    registry.addInterceptor(myInterceptor());
   }
 
   @Bean
   public MappedInterceptor myInterceptor() {
     return new MappedInterceptor(
-            new String[] {"/test/**"},
+            new String[] {"/me"},
             new TokenInterceptor(jwtSecret));
   }
 }

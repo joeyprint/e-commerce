@@ -29,8 +29,8 @@ public class AuthenticationController {
     return new ResponseEntity(null, HttpStatus.BAD_REQUEST);
   }
 
-  @GetMapping("/test")
-  public String test(@RequestAttribute("userId") String userId) {
-    return " Hello your userId is " + userId;
+  @GetMapping("/me")
+  public User getMyProfile(@RequestAttribute("userId") String userId) {
+    return userService.findByUserId(Long.parseLong(userId));
   }
 }
