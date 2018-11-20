@@ -23,4 +23,10 @@ public class UserAdapter {
     ResponseEntity<User> response = restTemplate.exchange(url, HttpMethod.GET, request, User.class);
     return response.getBody();
   }
+
+  public User getUserDetail(long userId) {
+    RestTemplate restTemplate = new RestTemplate();
+    String url = "http://localhost:8081";
+    return restTemplate.getForObject(url + "/user/" + userId, User.class);
+  }
 }
