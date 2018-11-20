@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <script>
         window.facebookSDKPromise = new Promise(function (resolve) {
             window.fbAsyncInit = function() {
@@ -40,11 +42,34 @@
             </button>
         </div>
         <div v-if="['not_authorized', 'unknown'].includes(authStatus)">
-            <button
-                    class="button is-link"
-                    @click="signIn"
-            >Sign in with Facebook
-            </button>
+            <nav class="navbar bg-primary text-white fixed-top ">
+                <span class="navbar-brand mx-auto h1 d-md-none">Shopdi Login</span>
+                <div th:replace="fragments/shopdiBanner :: banner" ></div>
+            </nav>
+            <div class="container">
+                <div class="row justify-content-center login-area">
+                    <div class="col-11 col-md-7 col-lg-4 text-center login-block">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <h4 class="login-text topic">Login to Shopdi</h3>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-md-8">
+                                <button
+                                    type="button"
+                                    class="btn btn-facebook is-link"
+                                    @click="signIn"
+                                >
+                                    <i class="fab fa-facebook-square facebook-icon"></i>
+                                    Sign in with Facebook
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
