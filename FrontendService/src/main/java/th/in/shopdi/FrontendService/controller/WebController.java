@@ -74,7 +74,10 @@ public class WebController {
     }
     User user = null;
     try {
-      model.addAttribute("user", userAdapter.getProfileByToken(token));
+      user = userAdapter.getProfileByToken(token);
+      Payment payment = paymentAdapter.getPaymentByUserId(user.getId());
+      model.addAttribute("user", user);
+      model.addAttribute("payment", payment);
     } catch (Exception e) {
       return "redirect:/login";
     }
