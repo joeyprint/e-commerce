@@ -30,58 +30,45 @@ public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    
-    private Product product;
 
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name="create_at")
     private Date createAt;
 
-    private User user;
+    private long productId;
 
-    public Order() {
-    }
-
-    public Order(long id, Product product, Date createAt, User user) {
-        this.id = id;
-        this.product = product;
-        this.createAt = createAt;
-        this.user = user;
-    }
+    private long userId;
 
     public long getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(long id) {
         this.id = id;
     }
 
-    public Product getProduct() {
-        return this.product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
     public Date getCreateAt() {
-        return this.createAt;
+        return createAt;
     }
 
     public void setCreateAt(Date createAt) {
         this.createAt = createAt;
     }
 
-    public User getUser() {
-        return this.user;
+    public long getProductId() {
+        return productId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setProductId(long productId) {
+        this.productId = productId;
     }
 
+    public long getUserId() {
+        return userId;
+    }
 
-
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
 }
