@@ -10,15 +10,17 @@
     <div class="container">
         <div class="row">
             <div th:each="product : ${products}" class="col-6 col-md-3">
-                <a th:href="'/product/' + ${product.id}" class="product-link">
-                    <div class="card box-shadow product-card">
-                        <img class="card-img-top" th:src="${product.thumbnail}" alt="Card image cap">
-                        <div class="py-2">
-                            <h5 class="card-text mb-2 text-primary text-overflow px-1" th:text="${product.name}"></h5>
-                            <span class="card-text" th:text="${'฿' + #numbers.formatDecimal(product.price, 0, 'COMMA', 2, 'POINT')}"></span>
+                <div class=" h-100 py-4">
+                    <a th:href="'/product/' + ${product.id}" class="product-link h-100">
+                        <div class="card box-shadow product-card h-100">
+                            <img class="card-img-top" th:src="${product.thumbnail}" alt="Card image cap">
+                            <div class="py-2">
+                                <h5 class="card-text mb-2 text-primary text-overflow px-1" th:text="${product.name}"></h5>
+                                <span class="card-text" th:text="${'฿' + #numbers.formatDecimal(product.price, 0, 'COMMA', 2, 'POINT')}"></span>
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
