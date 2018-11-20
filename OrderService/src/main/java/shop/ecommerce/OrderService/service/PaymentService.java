@@ -4,14 +4,19 @@ import co.omise.Client;
 import co.omise.ClientException;
 import co.omise.models.Charge;
 import co.omise.models.OmiseException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import shop.ecommerce.OrderService.model.Payment;
+import shop.ecommerce.OrderService.repository.PaymentRepositoryInterface;
 
 import java.io.IOException;
 
 @Service
-public class OmiseService {
+public class PaymentService {
 
+  @Autowired
+  private PaymentRepositoryInterface paymentRepositoryInterface;
 
   private Client omiseClient;
 
@@ -33,5 +38,9 @@ public class OmiseService {
             .card(token);
     Charge charge = this.omiseClient.charges().create(chargeSpec);
     return charge;
+  }
+
+  public Payment getPaymentByUserId(long userId) {
+    return paymentRepositoryInterface.findByUserId(userId);
   }
 }
