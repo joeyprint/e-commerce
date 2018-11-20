@@ -11,6 +11,16 @@ public class User {
 
   private String address;
 
+  private String telNo;
+
+  public String getTelNo() {
+    return telNo;
+  }
+
+  public void setTelNo(String telNo) {
+    this.telNo = telNo;
+  }
+
   public String getAddress() {
     return address;
   }
