@@ -30,22 +30,22 @@
 
         <div class="row d-flex justify-content-center">
 
-            <div class="col-12 col-md-6 p-0">
+            <div class="col-12 col-md-6">
                 <form>
-                    <div class="col-12 row nomargin spaceBox ">
-                        <label>Name</label>
-                        <input class="full-height full-width " type="text " id="fname " name="firstname ">
+                    <div class="form-group">
+                        <label for="fullname-input">Name</label>
+                        <input class="form-control" type="text " id="fullname-input" name="fullname" required>
                     </div>
-                    <div class="col-12 row nomargin ">
-                        <label>Address</label>
-                        <textarea class="col-12 full-height full-width " name="address " id="address " cols="30 " rows="10 "></textarea>
-
+                    <div class="form-group">
+                        <label for="address-input">Address</label>
+                        <textarea
+                            class="form-control"
+                            id="address-input"
+                            name="address"
+                            rows="10"
+                            required
+                        ></textarea>
                     </div>
-
-
-
-
-
                 </form>
             </div>
         </div>
