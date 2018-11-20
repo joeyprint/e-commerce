@@ -58,7 +58,7 @@
                 </section>
                 <div class="btn-bottom d-flex justify-content-center d-md-none">
                     <div class="col-12 col-md-6 p-0">
-                        <a href="" class="bg-primary full-width full-height d-flex align-items-center justify-content-center">
+                        <a th:href="'/ship?item=' + ${product.id}" class="bg-primary full-width full-height d-flex align-items-center justify-content-center">
                             <span class="text-title text-white">Buy Now</span>
                         </a>
                     </div>
@@ -67,7 +67,7 @@
             <div class="col-md-7 d-none d-md-block">
                 <h2 class="text-primary" th:text="${product.name}"></h2>
                 <p class="product-price" th:text="${'฿' + #numbers.formatDecimal(product.price, 0, 'COMMA', 2, 'POINT')}">฿450</p>
-                <a href="/ship" class="bg-primary text-white btn btn-lg">Buy Now</a>
+                <a th:href="'/ship?item=' + ${product.id}" class="bg-primary text-white btn btn-lg">Buy Now</a>
                 <div class="row mt-4 pt-2">
                     <div class="col detail">
                         <div class="card">
