@@ -1,6 +1,8 @@
 package th.in.shopdi.FrontendService.DTO;
 
 public class User {
+  private long id;
+
   private String facebookId;
 
   private String firstname;
@@ -12,6 +14,14 @@ public class User {
   private String address;
 
   private String telNo;
+
+  public long getId() {
+    return id;
+  }
+
+  public void setId(long id) {
+    this.id = id;
+  }
 
   public String getTelNo() {
     return telNo;
