@@ -12,9 +12,11 @@ body {
 }
 .text-title {
 	font-size: 24px;
+	font-weight: 400;
 }
 .text-sub-title {
 	font-size: 18px;
+	font-weight: 400;
 }
 .nav {
 	height: 50px;

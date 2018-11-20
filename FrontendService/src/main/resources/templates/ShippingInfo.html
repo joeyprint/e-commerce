@@ -24,6 +24,7 @@
     </nav>
 
 
+<<<<<<< HEAD
     <div class="container-full">
         <div class="justify-content-center">
 
@@ -77,17 +78,130 @@
                             <div>
                                 <a th:href="${/addAddress}" id="btn-addAdd" class="btn-pri bg-primary spacebtn-pri d-inline-flex p-2 bd-highlight align-items-center justify-content-center">
                                     <span class="text-button text-white ">Add Address</span>
+=======
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 bg-white space-white-box">
+                <section id="content">
+                    <div
+                        th:if="${user == null}"
+                        class="row justify-content-center"
+                    >
+                        <div class="row col-md-12 justify-content-center space-subtext ">
+                            <div class="subtext ">
+                                <span>You didn't add your addres</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="" class="btn-pri bg-primary my-4 d-inline-flex p-2 bd-highlight align-items-center justify-content-center">
+                                    <span class="text-button text-white ">Add Address</span>
                                 </a>
                             </div>
                         </div>
                     </div>
 
+                    <div
+                        th:unless="${user == null}"
+                        class="row"
+                    >
+                        <div class="col-12">
+                            <div class="d-flex justify-content-between text-primary mt-2">
+                                <div>Address</div>
+                                <div>
+                                    <a class="text-primary" href="#">edit address</a>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-5 text-right">
+                                    <strong>Address:</strong>
+                                </div>
+                                <div class="col-7">
+                                    <p th:text="${user.address}"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 bg-white ">
+                <section id="content ">
+                    <div
+                        th:if="${creditcard == null}"
+                        class="row justify-content-center"
+                    >
+                        <div class="row col-md-12 justify-content-center space-subtext ">
+                            <div class="subtext ">
+                                <span>You didn't add your payment</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="" class="btn-pri bg-primary my-4 d-inline-flex p-2 bd-highlight align-items-center justify-content-center">
+                                    <span class="text-button text-white ">Add Payment</span>
+>>>>>>> master
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+<<<<<<< HEAD
 
                 </div>
 
 
 
 
+=======
+                    <div
+                        th:unless="${creditcard == null}"
+                        class="row"
+                    >
+                        <div class="col-12">
+                            <div class="d-flex justify-content-between text-primary mt-2">
+                                <div>Payment</div>
+                                <div>
+                                    <a class="text-primary" href="#">change your payment</a>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-5 text-right">
+                                    <strong>Card Number:</strong>
+                                </div>
+                                <div class="col-7">
+                                    <p th:text="${creditcard.cardnumber}"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 text-right">
+                                    <strong>Card Holder:</strong>
+                                </div>
+                                <div class="col-7">
+                                    <p th:text="${creditcard.fullname}"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 text-right">
+                                    <strong>Expire Date:</strong>
+                                </div>
+                                <div class="col-7">
+                                    <p>[[${creditcard.expiredMonth}]] / [[${creditcard.expiredYear}]]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+>>>>>>> master
             </div>
 
 

@@ -3,17 +3,18 @@
 <head th:include="fragments/defaultTemplate :: defaultHead (title='online shopping')">
 </head>
 <body>
-    <nav class="navbar bg-primary text-white fixed-top">
-        <span class="navbar-brand mx-auto h1">Products</span>
+    <nav class="navbar bg-primary text-white fixed-top ">
+        <span class="navbar-brand mx-auto h1 d-md-none">Products</span>
+        <div th:replace="fragments/shopdiBanner :: banner" ></div>
     </nav>
     <div class="container">
         <div class="row">
-            <div th:each="product : ${products}" class="col-6">
+            <div th:each="product : ${products}" class="col-6 col-md-3">
                 <a th:href="'/product/' + ${product.id}" class="product-link">
-                    <div class="card">
+                    <div class="card box-shadow product-card">
                         <img class="card-img-top" th:src="${product.imageURL}" alt="Card image cap">
                         <div class="py-2">
-                            <h5 class="card-text mb-2 text-primary" th:text="${product.productname}"></h5>
+                            <h5 class="card-text mb-2 text-primary text-overflow px-1" th:text="${product.productname}"></h5>
                             <span class="card-text" th:text="${'฿' + #numbers.formatDecimal(product.price, 0, 'COMMA', 2, 'POINT')}"></span>
                         </div>
                     </div>
