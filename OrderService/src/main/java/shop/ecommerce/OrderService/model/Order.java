@@ -1,4 +1,4 @@
-package shop.ecommerce.OrderService;
+package shop.ecommerce.OrderService.model;
 
 import java.io.Serializable;
 import java.util.Date;
