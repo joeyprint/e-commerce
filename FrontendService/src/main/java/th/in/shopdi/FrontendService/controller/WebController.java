@@ -29,23 +29,15 @@ public class WebController {
 
   @GetMapping("/")
   public String home(Model model) {
-    List<Product> productList = new ArrayList<>();
-    for (int i = 0; i < 10; i++) {
-      Product product = new Product();
-      product.setId(1L);
-      product.setName("Red Bag");
-      product.setPrice(2000);
-      product.setThumbnail(
-          "https://i.pinimg.com/736x/47/8e/53/478e53e19348bff068863b3496550f95--purse-handles-purse-strap.jpg");
-      productList.add(product);
-    }
-    model.addAttribute("products", productList);
+    List<Product> products = productAdapter.getAllProduct();
+    model.addAttribute("products", products);
     return "index";
   }
 
   @GetMapping("/product/{product_id}")
   public String productDetail(@PathVariable(name = "product_id") long productId, Model model) {
-    model.addAttribute("product", productAdapter.getProductDetail(productId));
+    Product product = productAdapter.getProductDetail(productId);
+    model.addAttribute("product", product);
     return "ProductDetail";
   }
 
